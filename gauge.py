@@ -35,8 +35,7 @@ adc = ADCPi(0x68, 0x69, 12)
 ######
 #
 ######
-
-#reading voltages     adc.read_voltage(1)
+print(adc.read_voltage(1))
 
 
 ######
