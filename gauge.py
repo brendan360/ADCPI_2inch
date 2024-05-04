@@ -43,7 +43,7 @@ gaugeItems={
   "OIL_PRESSURE":["6","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],
   "OIL_TEMP":["7","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
   "WIDEBAND02":["8","Fuel Pres.", 0, 10,15,99,110,0,150,"A/F", 0]
-
+}
 
 ######
 #
