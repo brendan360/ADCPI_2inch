@@ -61,5 +61,5 @@ gaugeItems={
 # MAIN
 ######
   
-print(adc.read_voltage(int(gaugeItem[0][0])))
+print(adc.read_voltage(int(gaugeItems[0][0])))
 
