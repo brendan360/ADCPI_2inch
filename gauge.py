@@ -62,4 +62,4 @@ gaugeItems={
 ######
   
 print(adc.read_voltage(1))
-print(gaugeItems["FUEL_PRESSURE"][0])
+print(int(gaugeItems["FUEL_PRESSURE"][0]))
