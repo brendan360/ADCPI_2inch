@@ -61,7 +61,7 @@ gaugeItems={
 # MAIN
 ######
   
-print(adc.read_voltage(int(gaugeItems["FUEL_PRESSURE"][0])))
+
 
 for key in gaugeItems.keys():
-    print(gaugeItems[key][0])
+    print(adc.read_voltage(int(gaugeItems[key][0])))
