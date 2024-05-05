@@ -36,12 +36,12 @@ adc = ADCPi(0x68, 0x69, 12)
  
 gaugeItems={
 #   NAME,          value, display name warninglow,alertlow,warninghigh,alerthigh,rangelow,rangehigh,measurment,alertcount 
-  "FUEL_PRESSURE":["1","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],
+  "FUEL_PRESSURE":["1","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],               #
   "BOOST":["2","Fuel Pres.", 0, 10,15,99,110,0,150,"psi", 0],
   "BLOCK_TEMP":["3","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
-  "COOLANT_PRESSURE":["4","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],
+  "COOLANT_PRESSURE":["4","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],            #
   "COOLANT_TEMP":["5","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
-  "OIL_PRESSURE":["6","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],
+  "OIL_PRESSURE":["6","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],                #
   "OIL_TEMP":["7","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
   "WIDEBAND02":["8","Fuel Pres.", 0, 10,15,99,110,0,150,"A/F", 0]
 }
@@ -73,7 +73,7 @@ CONST_blockTempresistorRoomTemp = 2480.0
 
 CONST_coolantTemp_balanceResistor = 10000.0
 CONST_coolantTemp_beta = 3446
-CONST_coolantkTemproomTemp = 293.15
+CONST_coolantTemproomTemp = 293.15
 CONST_coolantTempresistorRoomTemp = 2480.0
 
 CONST_oilTemp_balanceResistor = 10000.0
@@ -103,7 +103,11 @@ def FUNCT_oil_pres():
     voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
     gaugeItems["OIL_PRESSURE"][2]= (voltage - CONST_oil_minVoltage)/(CONST_oil_maxVoltage -CONST_oil_minVoltage)*(CONST_oil_maxPressure- CONST_oil_minPressure) + CONST_oil_minPressure
     print(gaugeItems["OIL_PRESSURE"][2])
-  
+
+def FUNCT_boost_pres():
+    voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
+    gaugeItems["BOOST"][2]= (voltage - CONST_boost_minVoltage)/(CONST_boost_maxVoltage -CONST_boost_minVoltage)*(CONST_boost_maxPressure- CONST_boost_minPressure) + CONST_boost_minPressure
+    print(gaugeItems["BOOST"][2])
 
 ######
 # MAIN
@@ -112,7 +116,7 @@ def FUNCT_oil_pres():
 FUNCT_fuel_pres()
 FUNCT_coolant_pres()
 FUNCT_oil_pres()
-
+FUNCT_boost_pres()
 
                              
 #for key in gaugeItems.keys():
