@@ -33,8 +33,9 @@ adc = ADCPi(0x68, 0x69, 12)
 ######
 # VARIABLES
 ######
-#Analogue input,Display Name,value,warninglow,alertlow,warninghigh,alerthigh,rangelow,rangehigh,measurment,alertcount    "°C"
+ 
 gaugeItems={
+#   NAME,          value, display name warninglow,alertlow,warninghigh,alerthigh,rangelow,rangehigh,measurment,alertcount 
   "FUEL_PRESSURE":["1","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],
   "BOOST":["2","Fuel Pres.", 0, 10,15,99,110,0,150,"psi", 0],
   "BLOCK_TEMP":["3","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
@@ -44,6 +45,41 @@ gaugeItems={
   "OIL_TEMP":["7","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
   "WIDEBAND02":["8","Fuel Pres.", 0, 10,15,99,110,0,150,"A/F", 0]
 }
+
+CONST_fuel_minVoltage =.5
+CONST_fuel_maxVoltage =4.5
+CONST_fuel_minPressure =0
+CONST_fuel_maxPressure =1000
+
+CONST_coolant_minVoltage =.5
+CONST_coolant_maxVoltage =4.5
+CONST_coolant_minPressure =0
+CONST_coolant_maxPressure =1000
+
+CONST_oil_minVoltage =.5
+CONST_oil_maxVoltage =4.5
+CONST_oil_minPressure =0
+CONST_oil_maxPressure =1000
+
+CONST_boost_minVoltage =.4
+CONST_boost_maxVoltage =4.65
+CONST_boost_minPressure =20
+CONST_boost_maxPressure 300
+
+CONST_blockTemp_balanceResistor = 10000.0
+CONST_blockTemp_beta = 3446
+CONST_blockTemproomTemp = 293.15
+CONST_blockTempresistorRoomTemp = 2480.0
+
+CONST_coolantTemp_balanceResistor = 10000.0
+CONST_coolantTemp_beta = 3446
+CONST_coolantkTemproomTemp = 293.15
+CONST_coolantTempresistorRoomTemp = 2480.0
+
+CONST_oilTemp_balanceResistor = 10000.0
+CONST_oilTemp_beta = 3446
+CONST_oilTemproomTemp = 293.15
+CONST_oilTempresistorRoomTemp = 2480.0
 
 ######
 #
