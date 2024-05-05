@@ -64,7 +64,7 @@ CONST_oil_maxPressure =1000
 CONST_boost_minVoltage =.4
 CONST_boost_maxVoltage =4.65
 CONST_boost_minPressure =20
-CONST_boost_maxPressure 300
+CONST_boost_maxPressure =300
 
 CONST_blockTemp_balanceResistor = 10000.0
 CONST_blockTemp_beta = 3446
