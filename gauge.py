@@ -57,7 +57,7 @@ def FUNCT_fuel_pres():
     voltage=adc.read_voltage(int(gaugeItems["FUEL_PRESSURE"][0]))
     print(voltage)
 
-    gaugeItems["FUEL_PRESSURE"][2]= (voltage - .5)/(5 -.5)*(1000- 0) + 0
+    gaugeItems["FUEL_PRESSURE"][2]= (voltage - 0)/(5 -0)*(1000- 0) + 0
     print(gaugeItems["FUEL_PRESSURE"][2])
     
 
