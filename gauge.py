@@ -54,7 +54,7 @@ gaugeItems={
 #Calculator functions
 ######
 def FUNCT_fuel_pres():
-    voltage=(adc.read_voltage(int(gaugeItems[key][0])/1023)*5
+    voltage=(adc.read_voltage(int(gaugeItems[key][0])/1023)*5)
     print(voltage)
     gaugeItems[key][2]= (voltage - .5)/(4.5 -.5)*(1000- 0) + 0
     print(gaugeItems[key][2])
