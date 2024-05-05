@@ -100,7 +100,7 @@ def FUNCT_coolant_pres():
     print(gaugeItems["COOLANT_PRESSURE"][2])
             
 def FUNCT_oil_pres():
-    voltage=adc.read_voltage(int(gaugeItems[OIL_PRESSURE"][0]))
+    voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
     gaugeItems["OIL_PRESSURE"][2]= (voltage - CONST_oil_minVoltage)/(CONST_oil_maxVoltage -CONST_oil_minVoltage)*(CONST_oil_maxPressure- CONST_oil_minPressure) + CONST_oil_minPressure
     print(gaugeItems["OIL_PRESSURE"][2])
   
@@ -111,6 +111,7 @@ def FUNCT_oil_pres():
   
 FUNCT_fuel_pres()
 FUNCT_coolant_pres()
+FUNCT_oil_pres()
 
 
                              
