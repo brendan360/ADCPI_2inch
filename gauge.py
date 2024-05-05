@@ -37,7 +37,7 @@ adc = ADCPi(0x68, 0x69, 12)
 gaugeItems={
 #   NAME,          value, display name warninglow,alertlow,warninghigh,alerthigh,rangelow,rangehigh,measurment,alertcount 
   "FUEL_PRESSURE":["1","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],               #
-  "BOOST":["2","Fuel Pres.", 0, 10,15,99,110,0,150,"psi", 0],
+  "BOOST":["2","Fuel Pres.", 0, 10,15,99,110,0,150,"psi", 0],                       #
   "BLOCK_TEMP":["3","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
   "COOLANT_PRESSURE":["4","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],            #
   "COOLANT_TEMP":["5","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
@@ -46,6 +46,9 @@ gaugeItems={
   "WIDEBAND02":["8","Fuel Pres.", 0, 10,15,99,110,0,150,"A/F", 0]
 }
 
+######
+# Sensor Constants
+######
 CONST_fuel_minVoltage =.5
 CONST_fuel_maxVoltage =4.5
 CONST_fuel_minPressure =0
@@ -81,10 +84,8 @@ CONST_oilTemp_beta = 3446
 CONST_oilTemproomTemp = 293.15
 CONST_oilTempresistorRoomTemp = 2480.0
 
-######
-#
-######
-
+CONST_AFR_minVoltage=.68
+CONST_AFT_maxVoltage=1.36
 
 ######
 #Calculator functions
@@ -107,7 +108,10 @@ def FUNCT_oil_pres():
 def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
     gaugeItems["BOOST"][2]= (voltage - CONST_boost_minVoltage)/(CONST_boost_maxVoltage -CONST_boost_minVoltage)*(CONST_boost_maxPressure- CONST_boost_minPressure) + CONST_boost_minPressure
+    gaugeItems["BOOST"][2]=((gaugeItems["BOOST"][2]-101.3)*0.145038)
     print(gaugeItems["BOOST"][2])
+
+
 
 ######
 # MAIN
@@ -118,8 +122,4 @@ FUNCT_coolant_pres()
 FUNCT_oil_pres()
 FUNCT_boost_pres()
 
-                             
-#for key in gaugeItems.keys():
-#    print(adc.read_voltage(int(gaugeItems[key][0])))
-#    gaugeItems[key][2]=adc.read_voltage(int(gaugeItems[key][0]))
-#print (gaugeItems["FUEL_PRESSURE"][2])
+
