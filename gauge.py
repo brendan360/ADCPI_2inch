@@ -119,7 +119,7 @@ def FUNCT_block_temp():
 # MAIN
 ######
 
-print(int(gaugeItems["BLOCK_TEMP"][2]))
+print(adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0])))
 
       
 #FUNCT_fuel_pres()
