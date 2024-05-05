@@ -51,9 +51,16 @@ gaugeItems={
 
 
 ######
-#
+#Calculator functions
 ######
+def FUNCT_fuel_pres():
+    voltage=(adc.read_voltage(int(gaugeItems[key][0])/1023)*5
+    print(voltage)
+    gaugeItems[key][2]= (voltage - .5)/(4.5 -.5)*(1000- 0) + 0
+    print(gaugeItems[key][2])
+    
 
+                         
 
   
 
@@ -61,9 +68,11 @@ gaugeItems={
 # MAIN
 ######
   
+FUNCT_fuel_pres()
 
-for key in gaugeItems.keys():
-    print(adc.read_voltage(int(gaugeItems[key][0])))
-    gaugeItems[key][2]=adc.read_voltage(int(gaugeItems[key][0]))
 
-print (gaugeItems["FUEL_PRESSURE"][2])
+                             
+#for key in gaugeItems.keys():
+#    print(adc.read_voltage(int(gaugeItems[key][0])))
+#    gaugeItems[key][2]=adc.read_voltage(int(gaugeItems[key][0]))
+#print (gaugeItems["FUEL_PRESSURE"][2])
