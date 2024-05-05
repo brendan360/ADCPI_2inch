@@ -111,15 +111,20 @@ def FUNCT_boost_pres():
     gaugeItems["BOOST"][2]=((boostKpa-101.3)*0.145038)
     print(gaugeItems["BOOST"][2])
 
-
+def FUNCT_block_temp():
+    voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
+    
 
 ######
 # MAIN
 ######
-  
-FUNCT_fuel_pres()
-FUNCT_coolant_pres()
-FUNCT_oil_pres()
-FUNCT_boost_pres()
+
+print(int(gaugeItems["BLOCK_TEMP"][0])
+
+      
+#FUNCT_fuel_pres()
+#FUNCT_coolant_pres()
+#FUNCT_oil_pres()
+#FUNCT_boost_pres()
 
 
