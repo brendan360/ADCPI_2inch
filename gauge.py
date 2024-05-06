@@ -117,7 +117,7 @@ def FUNCT_block_temp():
     inTO = 1.0/298.15
     k = 1.0/(inTO+inBeta*math.log(1023/voltage-1.0))
     temperature = k-273.15
-
+print(temperature)
 
 ######
 # MAIN
