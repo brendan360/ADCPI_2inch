@@ -5,7 +5,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 import time
 import os
-
+import math
 
 ######
 # SET UPS
@@ -111,8 +111,12 @@ def FUNCT_boost_pres():
     gaugeItems["BOOST"][2]=((boostKpa-101.3)*0.145038)
     print(gaugeItems["BOOST"][2])
 
-def FUNCT_block_temp():
+def FUNCT_block_temp(Ro=100000.0, To=25.0, beta=4147.29):
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
+    steinhart = math.log(voltage / Ro) / beta      # log(voltage/Ro) / beta
+    steinhart += 1.0 / (To + 273.15)         # log(voltage/Ro) / beta + 1/To
+    steinhart = (1.0 / steinhart) - 273.15   # Invert, convert to C
+    return steinhart
     
 
 ######
