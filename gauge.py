@@ -122,8 +122,7 @@ def FUNCT_block_temp(Ro=100000.0, To=25.0, beta=4147.29):
 ######
 # MAIN
 ######
-
-print(adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0])))
+FUNCT_block_temp
 
       
 #FUNCT_fuel_pres()
