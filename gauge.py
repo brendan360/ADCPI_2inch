@@ -113,7 +113,7 @@ def FUNCT_boost_pres():
 
 def FUNCT_block_temp():
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
-    voltage=1000/voltage
+    voltage=CONST_blockTemp_balanceResistor/voltage
     steinhart = voltage /CONST_blockTempresistorRoomTemp 
     steinhart = math.log(steinhart) 
     steinhart /=CONST_blockTemp_beta
@@ -125,7 +125,8 @@ def FUNCT_block_temp():
 ######
 # MAIN
 ######
-FUNCT_block_temp()
+while True:
+   FUNCT_block_temp()
 
       
 #FUNCT_fuel_pres()
