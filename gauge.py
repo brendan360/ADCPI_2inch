@@ -69,7 +69,7 @@ CONST_boost_maxVoltage =4.65
 CONST_boost_minPressure =20
 CONST_boost_maxPressure =300
 
-CONST_blockTemp_balanceResistor = 10000.0
+CONST_blockTemp_balanceResistor = 1000.0
 CONST_blockTemp_beta = 3446
 CONST_blockTemproomTemp = 293.15
 CONST_blockTempresistorRoomTemp = 2480.0
