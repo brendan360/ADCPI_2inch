@@ -113,11 +113,11 @@ def FUNCT_boost_pres():
 
 def FUNCT_block_temp(Ro=100000.0, To=25.0, beta=4147.29):
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
-    steinhart = math.log(voltage / Ro) / beta      # log(voltage/Ro) / beta
-    steinhart += 1.0 / (To + 273.15)         # log(voltage/Ro) / beta + 1/To
-    steinhart = (1.0 / steinhart) - 273.15   # Invert, convert to C
+    steinhart = math.log(voltage / CONST_blockTemp_balanceResistor) / CONST_blockTemp_beta     
+    steinhart += 1.0 / (To + 273.15)        
+    steinhart = (1.0 / steinhart) - 273.15  
     print(steinhart)
-    
+
 
 ######
 # MAIN
