@@ -115,7 +115,7 @@ def FUNCT_block_temp():
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
     print(adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0])))
     Vr2 = voltage
-    R2=Vr2*10000/(5-Vr2)
+    R2=Vr2*1000/(5-Vr2)
     steinhart = R2 / CONST_blockTempresistorRoomTemp
     steinhart = math.log(steinhart)
     steinhart /= CONST_blockTemp_beta
