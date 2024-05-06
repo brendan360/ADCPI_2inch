@@ -71,8 +71,8 @@ CONST_boost_maxPressure =300
 
 CONST_blockTemp_balanceResistor = 10000.0
 CONST_blockTemp_beta = 3446
-CONST_blockTemproomTemp = 293.15
-CONST_blockTempresistorRoomTemp = 2480.0
+CONST_blockTemproomTemp = 293.15  #in K)
+CONST_blockTempresistorRoomTemp = 2480.0  
 
 CONST_coolantTemp_balanceResistor = 10000.0
 CONST_coolantTemp_beta = 3446
@@ -113,16 +113,13 @@ def FUNCT_boost_pres():
 
 def FUNCT_block_temp():
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
-    print(adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0])))
-    Vr2 = voltage
-    R2=Vr2*1000/(5-Vr2)
-    steinhart = R2 / CONST_blockTempresistorRoomTemp
-    steinhart = math.log(steinhart)
-    steinhart /= CONST_blockTemp_beta
-    steinhart += 1 / (29.315 + 273.15)
-    steinhart = 1 / steinhart
-    steinhart -= 273.15
-    print(steinhart)
+   steinhart = voltage /CONST_blockTempresistorRoomTemp 
+      steinhart = log(steinhart) 
+  steinhart /=CONST_blockTemp_beta
+  steinhart += 1.0 / (20 + 273.15)
+  steinhart = 1.0 / steinhart
+  steinhart -= 273.15
+print(steinhart)
 
 ######
 # MAIN
