@@ -122,7 +122,7 @@ def FUNCT_block_temp(Ro=100000.0, To=25.0, beta=4147.29):
 ######
 # MAIN
 ######
-FUNCT_block_temp
+FUNCT_block_temp()
 
       
 #FUNCT_fuel_pres()
