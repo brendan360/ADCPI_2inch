@@ -112,7 +112,7 @@ def FUNCT_boost_pres():
     if gaugeItems["BOOST"][2] < 0:
         gaugeItems["BOOST"][9] = "hg"
         gaugeItems["BOOST"][2]=(abs(gaugeItems["BOOST"][2])*2.03602)
-    else 
+    else:
         gaugeItems["BOOST"][9] = "psi"
         
         
