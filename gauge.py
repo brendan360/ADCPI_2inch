@@ -127,12 +127,13 @@ def FUNCT_block_temp():
 ######
 while True:
    FUNCT_block_temp()
+   FUNCT_boost_pres()
    time.sleep(.5)
 
       
 #FUNCT_fuel_pres()
 #FUNCT_coolant_pres()
 #FUNCT_oil_pres()
-#FUNCT_boost_pres()
+
 
 
