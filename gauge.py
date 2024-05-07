@@ -117,8 +117,8 @@ def FUNCT_boost_pres():
         
         
 
-    
-    print(gaugeItems["BOOST"][9])
+    print ((gaugeItems["BOOST"][2])(gaugeItems["BOOST"][9]))
+
 
 
 
