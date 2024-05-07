@@ -110,14 +110,14 @@ def FUNCT_boost_pres():
     boostKpa= (voltage - CONST_boost_minVoltage)/(CONST_boost_maxVoltage -CONST_boost_minVoltage)*(CONST_boost_maxPressure- CONST_boost_minPressure) + CONST_boost_minPressure
     gaugeItems["BOOST"][2]=((boostKpa-100.3)*0.145038)
     if gaugeItems["BOOST"][2] < 0:
-        gaugeItems["BOOST"][9] = "hg"
+        gaugeItems["BOOST"][9] = "inHg"
         gaugeItems["BOOST"][2]=(abs(gaugeItems["BOOST"][2])*2.03602)
     else:
         gaugeItems["BOOST"][9] = "psi"
         
         
 
-    print ((gaugeItems["BOOST"][2])(gaugeItems["BOOST"][9]))
+    print ((gaugeItems["BOOST"][2])+(gaugeItems["BOOST"][9]))
 
 
 
