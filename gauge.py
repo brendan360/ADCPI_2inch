@@ -108,7 +108,7 @@ def FUNCT_oil_pres():
 def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
     boostKpa= (voltage - CONST_boost_minVoltage)/(CONST_boost_maxVoltage -CONST_boost_minVoltage)*(CONST_boost_maxPressure- CONST_boost_minPressure) + CONST_boost_minPressure
-    gaugeItems["BOOST"][2]=((boostKpa-101.3)*0.145038)
+    gaugeItems["BOOST"][2]=((boostKpa-100.3)*0.145038)
     print(gaugeItems["BOOST"][2])
 
 def FUNCT_block_temp():
