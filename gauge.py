@@ -111,7 +111,7 @@ def FUNCT_boost_pres():
     gaugeItems["BOOST"][2]=round(((boostKpa-91.3)*0.145038),2)
     if gaugeItems["BOOST"][2] < 0:
         gaugeItems["BOOST"][9] = "inHg"
-        gaugeItems["BOOST"][2]=(abs(gaugeItems["BOOST"][2])*2.03602)
+        gaugeItems["BOOST"][2]=round((abs(gaugeItems["BOOST"][2])*2.03602),2)
     else:
         gaugeItems["BOOST"][9] = "psi"
        
