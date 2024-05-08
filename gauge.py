@@ -109,6 +109,7 @@ def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
     boostKpa= (voltage - CONST_boost_minVoltage)/(CONST_boost_maxVoltage -CONST_boost_minVoltage)*(CONST_boost_maxPressure- CONST_boost_minPressure) + CONST_boost_minPressure
     gaugeItems["BOOST"][2]=((boostKpa-91.3)*0.145038)
+    gaugeItems["BOOST"][2]=round(gaugeItems["BOOST"][2],2)
     if gaugeItems["BOOST"][2] < 0:
         gaugeItems["BOOST"][9] = "inHg"
         gaugeItems["BOOST"][2]=(abs(gaugeItems["BOOST"][2])*2.03602)
@@ -131,7 +132,7 @@ def FUNCT_block_temp():
     steinhart += 1.0 / (20 + 273.15)
     steinhart = 1.0 / steinhart
     steinhart -= 273.15
-    gaugeItems["BLOCK_TEMP"][2]=round(steinhart,)
+    gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
     print(gaugeItems["BLOCK_TEMP"][2])
     
 
