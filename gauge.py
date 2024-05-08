@@ -114,10 +114,10 @@ def FUNCT_boost_pres():
         gaugeItems["BOOST"][2]=(abs(gaugeItems["BOOST"][2])*2.03602)
     else:
         gaugeItems["BOOST"][9] = "psi"
-        
+       
         
 
-    print ((str(gaugeItems["BOOST"][2]))+(str(gaugeItems["BOOST"][9])))
+    print ((str(gaugeItems["BOOST"][2]))+" "+(str(gaugeItems["BOOST"][9])))
 
 
 
@@ -131,7 +131,7 @@ def FUNCT_block_temp():
     steinhart += 1.0 / (20 + 273.15)
     steinhart = 1.0 / steinhart
     steinhart -= 273.15
-    gaugeItems["BLOCK_TEMP"][2]=steinhart
+    gaugeItems["BLOCK_TEMP"][2]=round(steinhart,)
     print(gaugeItems["BLOCK_TEMP"][2])
     
 
@@ -140,13 +140,10 @@ def FUNCT_block_temp():
 ######
 while True:
    FUNCT_block_temp()
-   FUNCT_boost_pres()
-   time.sleep(.5)
-
-      
-#FUNCT_fuel_pres()
-#FUNCT_coolant_pres()
-#FUNCT_oil_pres()
+   FUNCT_boost_pres()  
+   FUNCT_fuel_pres()
+   FUNCT_coolant_pres()
+   FUNCT_oil_pres()
 
 
 
