@@ -144,6 +144,7 @@ while True:
    FUNCT_fuel_pres()
    FUNCT_coolant_pres()
    FUNCT_oil_pres()
+   time.sleep(.5)
 
 
 
