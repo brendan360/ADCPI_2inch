@@ -37,13 +37,13 @@ adc = ADCPi(0x68, 0x69, 12)
 gaugeItems={
 #   NAME,          value, display name warninglow,alertlow,warninghigh,alerthigh,rangelow,rangehigh,measurment,alertcount 
   "FUEL_PRESSURE":["1","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],               #
-  "BOOST":["2","Fuel Pres.", 0, 10,15,99,110,0,150,"psi", 0],                       #
-  "BLOCK_TEMP":["3","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
-  "COOLANT_PRESSURE":["4","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],            #
-  "COOLANT_TEMP":["5","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
-  "OIL_PRESSURE":["6","Fuel Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],                #
-  "OIL_TEMP":["7","Fuel Pres.", 0, 10,15,99,110,0,150,"°C", 0],
-  "WIDEBAND02":["8","Fuel Pres.", 0, 10,15,99,110,0,150,"A/F", 0]
+  "BOOST":["2","Boost.", 0, 10,15,99,110,0,150,"psi", 0],                       #
+  "BLOCK_TEMP":["3","Engine °C ", 0, 10,15,99,110,0,150,"°C", 0],
+  "COOLANT_PRESSURE":["4","H2O Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],            #
+  "COOLANT_TEMP":["5","H2O °C", 0, 10,15,99,110,0,150,"°C", 0],
+  "OIL_PRESSURE":["6",Oil Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],                #
+  "OIL_TEMP":["7","Oil °C", 0, 10,15,99,110,0,150,"°C", 0],
+  "WIDEBAND02":["8","O2 AFR", 0, 10,15,99,110,0,150,"A/F", 0]
 }
 
 ######
@@ -93,17 +93,17 @@ CONST_AFT_maxVoltage=1.36
 def FUNCT_fuel_pres():
     voltage=adc.read_voltage(int(gaugeItems["FUEL_PRESSURE"][0]))
     gaugeItems["FUEL_PRESSURE"][2]= (voltage - CONST_fuel_minVoltage)/(CONST_fuel_maxVoltage -CONST_fuel_minVoltage)*(CONST_fuel_maxPressure- CONST_fuel_minPressure) + CONST_fuel_minPressure
-    print(gaugeItems["FUEL_PRESSURE"][2])
+#    print(gaugeItems["FUEL_PRESSURE"][2])
 
 def FUNCT_coolant_pres():
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
     gaugeItems["COOLANT_PRESSURE"][2]= (voltage - CONST_coolant_minVoltage)/(CONST_coolant_maxVoltage -CONST_coolant_minVoltage)*(CONST_coolant_maxPressure- CONST_coolant_minPressure) + CONST_coolant_minPressure
-    print(gaugeItems["COOLANT_PRESSURE"][2])
+#    print(gaugeItems["COOLANT_PRESSURE"][2])
             
 def FUNCT_oil_pres():
     voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
     gaugeItems["OIL_PRESSURE"][2]= (voltage - CONST_oil_minVoltage)/(CONST_oil_maxVoltage -CONST_oil_minVoltage)*(CONST_oil_maxPressure- CONST_oil_minPressure) + CONST_oil_minPressure
-    print(gaugeItems["OIL_PRESSURE"][2])
+#    print(gaugeItems["OIL_PRESSURE"][2])
 
 def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
@@ -117,7 +117,7 @@ def FUNCT_boost_pres():
        
         
 
-    print ((str(gaugeItems["BOOST"][2]))+" "+(str(gaugeItems["BOOST"][9])))
+#    print ((str(gaugeItems["BOOST"][2]))+" "+(str(gaugeItems["BOOST"][9])))
 
 
 
@@ -132,7 +132,7 @@ def FUNCT_block_temp():
     steinhart = 1.0 / steinhart
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
-    print(gaugeItems["BLOCK_TEMP"][2])
+#    print(gaugeItems["BLOCK_TEMP"][2])
     
 
 ######
@@ -144,6 +144,7 @@ while True:
    FUNCT_fuel_pres()
    FUNCT_coolant_pres()
    FUNCT_oil_pres()
+   print(gaugeItems[0][2])
    time.sleep(.5)
 
 
