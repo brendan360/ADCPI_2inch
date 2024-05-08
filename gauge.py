@@ -41,7 +41,7 @@ gaugeItems={
   "BLOCK_TEMP":["3","Engine °C ", 0, 10,15,99,110,0,150,"°C", 0],
   "COOLANT_PRESSURE":["4","H2O Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],            #
   "COOLANT_TEMP":["5","H2O °C", 0, 10,15,99,110,0,150,"°C", 0],
-  "OIL_PRESSURE":["6",Oil Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],                #
+  "OIL_PRESSURE":["6","Oil Pres.", 0, 10,15,99,110,0,150,"Kpa", 0],                #
   "OIL_TEMP":["7","Oil °C", 0, 10,15,99,110,0,150,"°C", 0],
   "WIDEBAND02":["8","O2 AFR", 0, 10,15,99,110,0,150,"A/F", 0]
 }
