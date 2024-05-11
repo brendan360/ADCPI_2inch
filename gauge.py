@@ -140,11 +140,11 @@ def FUNCT_block_temp():
 # MAIN
 ######
 while True:
-   FUNCT_block_temp()
-   FUNCT_boost_pres()  
-   FUNCT_fuel_pres()
-   FUNCT_coolant_pres()
-   FUNCT_oil_pres()
+#   FUNCT_block_temp()
+#   FUNCT_boost_pres()  
+#   FUNCT_fuel_pres()
+#   FUNCT_coolant_pres()
+#   FUNCT_oil_pres()
 
    print(tabulate([[gaugeItems["BOOST"][2]]],headers=[gaugeItems["BOOST"][1]],tablefmt='orgtbl'))
 
