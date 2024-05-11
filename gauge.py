@@ -149,7 +149,7 @@ while True:
 #   print(tabulate([[gaugeItems["BOOST"][2]]],headers=[gaugeItems["BOOST"][1]],tablefmt='orgtbl'))
 
     
-   print(tabulate([[gaugeItems["BOOST"][2])],[(gaugeItems["FUEL_PRESSURE"][2])],[(gaugeItems["BLOCK_TEMP"][2])],[(gaugeItems["COOLANT_PRESSURE"][2])],[(gaugeItems[COOLANT_TEMP"][2])],[(gaugeItems[OIL_PRESSURE"][2])],[(gaugeItems["OIL_TEMP"][2])],[(gaugeItems["WIDEBAND02"][2])]], headers=[gaugeItems["BOOST"][1],(gaugeItems["FUEL_PRESSURE"][1]),(gaugeItems["BLOCK_TEMP"][1]),(gaugeItems["COOLANT_PRESSURE"][1]),(gaugeItems[COOLANT_TEMP"][1]),(gaugeItems[OIL_PRESSURE"][1]),(gaugeItems["OIL_TEMP"][1]),(gaugeItems["WIDEBAND02"][1]], tablefmt='orgtbl'))
+   print(tabulate([[gaugeItems["BOOST"][2])],[(gaugeItems["FUEL_PRESSURE"][2])],[(gaugeItems["BLOCK_TEMP"][2])],[(gaugeItems["COOLANT_PRESSURE"][2])],[(gaugeItems[COOLANT_TEMP"][2])],[(gaugeItems[OIL_PRESSURE"][2])],[(gaugeItems["OIL_TEMP"][2])],[(gaugeItems["WIDEBAND02"][2])]], headers=[gaugeItems["BOOST"][1],(gaugeItems["FUEL_PRESSURE"][1]),(gaugeItems["BLOCK_TEMP"][1]),(gaugeItems["COOLANT_PRESSURE"][1]),(gaugeItems[COOLANT_TEMP"][1]),(gaugeItems[OIL_PRESSURE"][1]),(gaugeItems["OIL_TEMP"][1]),(gaugeItems["WIDEBAND02"][1])], tablefmt='orgtbl'))
    time.sleep(.5)
 
 
