@@ -78,7 +78,7 @@ CONST_blockTempresistorRoomTemp = 2480.0
 CONST_coolantTemp_balanceResistor = 1000.0
 CONST_coolantTemp_beta = 3446
 CONST_coolantTemproomTemp = 293.15
-CONST_coolantTempresistorRoomTemp = 2480.0
+CONST_coolantTempresistorRoomTemp = 10000
 
 CONST_oilTemp_balanceResistor = 10000.0
 CONST_oilTemp_beta = 3446
