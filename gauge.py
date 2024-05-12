@@ -154,7 +154,7 @@ def FUNCT_coolant_temp():
 ######
 while True:
 #   FUNCT_block_temp()
-#   FUNCT_boost_pres()  
+    FUNCT_boost_pres()  
 #   FUNCT_fuel_pres()
 #   FUNCT_coolant_pres()
 #   FUNCT_oil_pres()
