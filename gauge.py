@@ -78,7 +78,7 @@ CONST_blockTempresistorRoomTemp = 2480.0
 CONST_coolantTemp_balanceResistor = 1000.0
 CONST_coolantTemp_beta = 3446
 CONST_coolantTemproomTemp = 293.15
-CONST_coolantTempresistorRoomTemp = 10000
+CONST_coolantTempresistorRoomTemp = 2480.0
 
 CONST_oilTemp_balanceResistor = 10000.0
 CONST_oilTemp_beta = 3446
@@ -156,7 +156,7 @@ while True:
     FUNCT_block_temp()
     FUNCT_boost_pres()  
 #   FUNCT_fuel_pres()
-    FUNCT_coolant_pres()
+#    FUNCT_coolant_pres()
     FUNCT_coolant_temp()
 #   FUNCT_oil_pres()
  #   print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
