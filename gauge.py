@@ -99,7 +99,7 @@ def FUNCT_fuel_pres():
 def FUNCT_coolant_pres():
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
     gaugeItems["COOLANT_PRESSURE"][2]= (voltage - CONST_coolant_minVoltage)/(CONST_coolant_maxVoltage -CONST_coolant_minVoltage)*(CONST_coolant_maxPressure- CONST_coolant_minPressure) + CONST_coolant_minPressure
-#    print(gaugeItems["COOLANT_PRESSURE"][2])
+   print(gaugeItems["COOLANT_PRESSURE"][2])
             
 def FUNCT_oil_pres():
     voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
