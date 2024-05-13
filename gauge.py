@@ -156,8 +156,8 @@ while True:
 #    FUNCT_block_temp()
 #    FUNCT_boost_pres()  
 #   FUNCT_fuel_pres()
-    FUNCT_coolant_pres()
-#    FUNCT_coolant_temp()
+#    FUNCT_coolant_pres()
+    FUNCT_coolant_temp()
 #   FUNCT_oil_pres()
  #   print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
 
