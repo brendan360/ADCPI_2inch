@@ -65,7 +65,7 @@ CONST_oil_maxVoltage =4.5
 CONST_oil_minPressure =0
 CONST_oil_maxPressure =1000
 
-CONST_boost_minVoltage =.4
+CONST_boost_minVoltage =.3
 CONST_boost_maxVoltage =4.65
 CONST_boost_minPressure =20
 CONST_boost_maxPressure =300
