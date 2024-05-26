@@ -134,7 +134,7 @@ def FUNCT_block_temp():
 def FUNCT_coolant_temp():
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     # Calculate resistance of the thermistor
-    resistance = CONST_coolantTemp_balanceResistor / (CONST_supply_voltage / voltage)
+    resistance = CONST_coolantTemp_balanceResistor / (CONST_supply_voltage / voltage - 2)
 
     # Calculate temperature using the Steinhart-Hart equation
     steinhart = resistance / CONST_coolantTempresistorRoomTemp
