@@ -128,6 +128,7 @@ def FUNCT_block_temp():
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
 
+
 def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.7, beta=3446, r_25=2480):
 
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
@@ -141,7 +142,7 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.7, beta=3446, r_25=2480
     steinhart += 1.0 / (20 + 273.15)
     steinhart = 1.0 / steinhart
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
-    gaugeItems["COOLANT_TEMP"][2]=temperature
+    gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
 
 
 
