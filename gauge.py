@@ -150,7 +150,7 @@ def FUNCT_coolant_temp():
     BETA = 3446  # Beta value
     V_read=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     # Calculate resistance of the thermistor
-    R_t = (V_SUPPLY * R_B / V_read) - R_B
+    R_t = (V_read * R_B) / (V_SUPPLY - V_read)
 
     # Calculate temperature using Steinhart-Hart equation
     temperature = 1 / ((1 / 298.15) + (1 / BETA) * math.log(R_t / R_20))
