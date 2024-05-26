@@ -128,7 +128,7 @@ def FUNCT_block_temp():
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
 
 
-def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.8, beta=3446, r_25=2038):
+def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.8, beta=3446, r_25=2482):
 
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     # Calculate resistance of the thermistor
@@ -138,7 +138,7 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.8, beta=3446, r_25=2038
     steinhart = resistance / r_25
     steinhart = math.log(steinhart)
     steinhart /= beta
-    steinhart += 1.0 / (25 + 273.15)
+    steinhart += 1.0 / (20 + 273.15)
     steinhart = 1.0 / steinhart
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
     gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
