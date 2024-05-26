@@ -74,17 +74,17 @@ CONST_boost_maxPressure =300
 
 CONST_blockTemp_balanceResistor = 1000.0
 CONST_blockTemp_beta = 3600
-CONST_blockTemproomTemp = 298.15  #in K)
+CONST_blockTemproomTemp = 298.15 
 CONST_blockTempresistorRoomTemp = 2480.0  
 
-CONST_coolantTemp_balanceResistor = 1000.0
+CONST_coolantTemp_balanceResistor = 10000.0
 CONST_coolantTemp_beta = 3446
 CONST_coolantTemproomTemp = 293.15
 CONST_coolantTempresistorRoomTemp = 2480.0
 
 CONST_oilTemp_balanceResistor = 1000.0
 CONST_oilTemp_beta = 3446
-CONST_oilTemproomTemp = 20
+CONST_oilTemproomTemp = 293.15
 CONST_oilTempresistorRoomTemp = 2480.0
 
 CONST_AFR_minVoltage=.68
