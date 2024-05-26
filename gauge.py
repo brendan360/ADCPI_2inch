@@ -167,7 +167,7 @@ while True:
 #    FUNCT_block_temp()
 #    FUNCT_boost_pres()  
 #    FUNCT_fuel_pres()
-#    FUNCT_coolant_pres()
+    FUNCT_coolant_pres()
 #    FUNCT_coolant_temp()
 #    FUNCT_oil_pres()
 #    FUNCT_oil_temp()
