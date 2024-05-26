@@ -96,7 +96,7 @@ CONST_AFT_maxVoltage=1.36
 def FUNCT_fuel_pres():
     voltage=adc.read_voltage(int(gaugeItems["FUEL_PRESSURE"][0]))
     gaugeItems["FUEL_PRESSURE"][2]= (voltage - CONST_fuel_minVoltage)/(CONST_fuel_maxVoltage -CONST_fuel_minVoltage)*(CONST_fuel_maxPressure- CONST_fuel_minPressure) + CONST_fuel_minPressure
-#    print(gaugeItems["FUEL_PRESSURE"][2])
+
 
 def FUNCT_coolant_pres():
     cvoltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
@@ -150,12 +150,13 @@ def FUNCT_coolant_temp():
 # MAIN
 ######
 while True:
-    FUNCT_block_temp()
+#    FUNCT_block_temp()
 #    FUNCT_boost_pres()  
 #   FUNCT_fuel_pres()
-    FUNCT_coolant_pres()
-    FUNCT_coolant_temp()
-#   FUNCT_oil_pres()
+#    FUNCT_coolant_pres()
+#    FUNCT_coolant_temp()
+#    FUNCT_oil_pres()
+     FUNCT_fuel_pres()
     
     print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
 
