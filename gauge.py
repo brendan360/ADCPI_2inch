@@ -125,7 +125,7 @@ def FUNCT_block_temp():
     steinhart = voltage /CONST_blockTempresistorRoomTemp 
     steinhart = math.log(steinhart) 
     steinhart /=CONST_blockTemp_beta
-    steinhart += 1.0 / (20 + 273.15)
+    steinhart += 1.0 / (25 + 273.15)
     steinhart = 1.0 / steinhart
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
