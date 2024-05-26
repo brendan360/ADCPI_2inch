@@ -128,7 +128,7 @@ def FUNCT_block_temp():
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
 
-def FUNCT_coolant_temp(voltage balance_resistor=1000, v_supply=4.9, beta=3950, r_25=10000):
+def FUNCT_coolant_temp(voltage, balance_resistor=1000, v_supply=4.9, beta=3950, r_25=10000):
     """
     Calculate the temperature of an NTC thermistor.
 
