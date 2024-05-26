@@ -79,7 +79,7 @@ CONST_blockTempresistorRoomTemp = 2480.0
 
 CONST_coolantTemp_balanceResistor = 1000.0
 CONST_coolantTemp_beta = 3446
-CONST_coolantTemproomTemp = 20  #in c
+CONST_coolantTemproomTemp = 293.15
 CONST_coolantTempresistorRoomTemp = 2480.0
 
 CONST_oilTemp_balanceResistor = 1000.0
@@ -125,7 +125,7 @@ def FUNCT_block_temp():
     steinhart = voltage /CONST_blockTempresistorRoomTemp 
     steinhart = math.log(steinhart) 
     steinhart /=CONST_blockTemp_beta
-    steinhart += 1.0 / (25 + 273.15)
+    steinhart += 1.0 / (CONST_blockTemproomTemp)
     steinhart = 1.0 / steinhart
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
@@ -140,7 +140,7 @@ def FUNCT_coolant_temp():
     steinhart = resistance / CONST_coolantTempresistorRoomTemp
     steinhart = math.log(steinhart)
     steinhart /= CONST_coolantTemp_beta
-    steinhart += 1.0 / (CONST_coolantTemproomTemp + 273.15)
+    steinhart += 1.0 / (CONST_coolantTemproomTemp)
     steinhart = 1.0 / steinhart
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
     gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
