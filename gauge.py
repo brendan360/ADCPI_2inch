@@ -57,7 +57,7 @@ CONST_fuel_maxVoltage =4.5
 CONST_fuel_minPressure =0
 CONST_fuel_maxPressure =1000
 
-CONST_coolant_minVoltage =.48
+CONST_coolant_minVoltage =.47
 CONST_coolant_maxVoltage =4.5
 CONST_coolant_minPressure =0
 CONST_coolant_maxPressure =1000
