@@ -130,7 +130,10 @@ def FUNCT_block_temp():
     
 def FUNCT_coolant_temp():
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
-    voltage=CONST_coolantTemp_balanceResistor/voltage
+
+
+    
+    #voltage=CONST_coolantTemp_balanceResistor/voltage
     steinhart = voltage /CONST_coolantTempresistorRoomTemp 
     steinhart = math.log(steinhart) 
     steinhart /=CONST_coolantTemp_beta
