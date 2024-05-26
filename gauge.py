@@ -155,12 +155,6 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.9, beta=3950, r_25=1000
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
     gaugeItems["COOLANT_TEMP"][2]=temperature
 
-
-# Example usage
-voltage_read = 2.5  # Example voltage read from the thermistor
-temperature = calculate_temperature(voltage_read)
-print("Temperature: {:.2f} °C".format(temperature))
-
    
 
 
