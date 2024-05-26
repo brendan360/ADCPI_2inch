@@ -82,7 +82,7 @@ CONST_coolantTemp_beta = 3446
 CONST_coolantTemproomTemp = 20  #in c
 CONST_coolantTempresistorRoomTemp = 2480.0
 
-CONST_oilTemp_balanceResistor = 10000.0
+CONST_oilTemp_balanceResistor = 1000.0
 CONST_oilTemp_beta = 3446
 CONST_oilTemproomTemp = 20
 CONST_oilTempresistorRoomTemp = 2480.0
@@ -106,6 +106,7 @@ def FUNCT_coolant_pres():
 def FUNCT_oil_pres():
     voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
     gaugeItems["OIL_PRESSURE"][2]= (voltage - CONST_oil_minVoltage)/(CONST_oil_maxVoltage -CONST_oil_minVoltage)*(CONST_oil_maxPressure- CONST_oil_minPressure) + CONST_oil_minPressure
+
 
 def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
@@ -131,10 +132,9 @@ def FUNCT_block_temp():
 
 
 def FUNCT_coolant_temp():
-
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     # Calculate resistance of the thermistor
-    resistance = CONST_coolantTemp_balanceResistor / (CONST_supply_voltage / voltage - 1)
+    resistance = CONST_coolantTemp_balanceResistor / (CONST_supply_voltage / voltage)
 
     # Calculate temperature using the Steinhart-Hart equation
     steinhart = resistance / CONST_coolantTempresistorRoomTemp
