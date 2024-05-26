@@ -50,7 +50,7 @@ gaugeItems={
 ######
 # Sensor Constants
 ######
-CONST_supply_voltage =4.8 
+CONST_supply_voltage =4.12
 
 CONST_fuel_minVoltage =.5
 CONST_fuel_maxVoltage =4.5
@@ -78,13 +78,13 @@ CONST_blockTemproomTemp = 298.15  #in K)
 CONST_blockTempresistorRoomTemp = 2480.0  
 
 CONST_coolantTemp_balanceResistor = 1000.0
-CONST_coolantTemp_beta = 5000
+CONST_coolantTemp_beta = 3446
 CONST_coolantTemproomTemp = 20  #in c
 CONST_coolantTempresistorRoomTemp = 2480.0
 
 CONST_oilTemp_balanceResistor = 10000.0
 CONST_oilTemp_beta = 3446
-CONST_oilTemproomTemp = 293.15
+CONST_oilTemproomTemp = 20
 CONST_oilTempresistorRoomTemp = 2480.0
 
 CONST_AFR_minVoltage=.68
