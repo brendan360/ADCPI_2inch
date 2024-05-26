@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+o#!/usr/bin/python3
 ######
 #IMPORTS
 ######
@@ -96,7 +96,7 @@ CONST_AFT_maxVoltage=1.36
 def FUNCT_fuel_pres():
     voltage=adc.read_voltage(int(gaugeItems["FUEL_PRESSURE"][0]))
     gaugeItems["FUEL_PRESSURE"][2]= (voltage - CONST_fuel_minVoltage)/(CONST_fuel_maxVoltage -CONST_fuel_minVoltage)*(CONST_fuel_maxPressure- CONST_fuel_minPressure) + CONST_fuel_minPressure
-
+    print(voltage)
 
 def FUNCT_coolant_pres():
     cvoltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
@@ -158,11 +158,11 @@ while True:
 #    FUNCT_oil_pres()
     FUNCT_fuel_pres()
     
-    print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
+#    print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
 
-    os.system('clear')
+#    os.system('clear')
 
-    print(tabulate([[gaugeItems["BOOST"][2],gaugeItems["FUEL_PRESSURE"][2],gaugeItems["BLOCK_TEMP"][2],gaugeItems["COOLANT_PRESSURE"][2],gaugeItems["COOLANT_TEMP"][2],gaugeItems["OIL_PRESSURE"][2],gaugeItems["OIL_TEMP"][2],gaugeItems["WIDEBAND02"][2]],[]],headers=[gaugeItems["BOOST"][1],gaugeItems["FUEL_PRESSURE"][1],gaugeItems["BLOCK_TEMP"][1],gaugeItems["COOLANT_PRESSURE"][1],gaugeItems["COOLANT_TEMP"][1],gaugeItems["OIL_PRESSURE"][1],gaugeItems["OIL_TEMP"][1],gaugeItems["WIDEBAND02"][1]],  tablefmt='orgtbl'))
+#    print(tabulate([[gaugeItems["BOOST"][2],gaugeItems["FUEL_PRESSURE"][2],gaugeItems["BLOCK_TEMP"][2],gaugeItems["COOLANT_PRESSURE"][2],gaugeItems["COOLANT_TEMP"][2],gaugeItems["OIL_PRESSURE"][2],gaugeItems["OIL_TEMP"][2],gaugeItems["WIDEBAND02"][2]],[]],headers=[gaugeItems["BOOST"][1],gaugeItems["FUEL_PRESSURE"][1],gaugeItems["BLOCK_TEMP"][1],gaugeItems["COOLANT_PRESSURE"][1],gaugeItems["COOLANT_TEMP"][1],gaugeItems["OIL_PRESSURE"][1],gaugeItems["OIL_TEMP"][1],gaugeItems["WIDEBAND02"][1]],  tablefmt='orgtbl'))
     time.sleep(1)
 
 
