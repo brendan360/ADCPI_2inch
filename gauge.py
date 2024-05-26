@@ -145,6 +145,20 @@ def FUNCT_coolant_temp():
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
     gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
 
+def FUNCT_oil_temp():
+    voltage=adc.read_voltage(int(gaugeItems["OIL_TEMP"][0]))
+    # Calculate resistance of the thermistor
+    resistance = CONST_oilTemp_balanceResistor / (CONST_supply_voltage / voltage - 1)
+
+    # Calculate temperature using the Steinhart-Hart equation
+    steinhart = resistance / CONST_oilTempresistorRoomTemp
+    steinhart = math.log(steinhart)
+    steinhart /= CONST_oilTemp_beta
+    steinhart += 1.0 / (CONST_oilTemproomTemp)
+    steinhart = 1.0 / steinhart
+    temperature = steinhart - 273.15  # Convert Kelvin to Celsius
+    gaugeItems["OIL_TEMP"][2]=round(temperature,2)
+
 
 ######
 # MAIN
@@ -152,11 +166,12 @@ def FUNCT_coolant_temp():
 while True:
 #    FUNCT_block_temp()
 #    FUNCT_boost_pres()  
-#   FUNCT_fuel_pres()
+#    FUNCT_fuel_pres()
 #    FUNCT_coolant_pres()
 #    FUNCT_coolant_temp()
 #    FUNCT_oil_pres()
-    FUNCT_fuel_pres()
+#    FUNCT_oil_temp()
+#    FUNCT_fuel_pres()
     
     print(tabulate([[gaugeItems["BOOST"][2]],[gaugeItems["BOOST"][1]]],headers=[gaugeItems["BOOST"][1],[gaugeItems["BOOST"][1]]],tablefmt='orgtbl'))
 
