@@ -138,7 +138,7 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.8, beta=3446, r_25=2480
     steinhart = resistance / r_25
     steinhart = math.log(steinhart)
     steinhart /= beta
-    steinhart += 1.0 / (20 + 264.15)
+    steinhart += 1.0 / (20 + 266.15)
     steinhart = 1.0 / steinhart
     temperature = steinhart - 273.15  # Convert Kelvin to Celsius
     gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
