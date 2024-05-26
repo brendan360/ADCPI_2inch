@@ -149,12 +149,25 @@ def FUNCT_coolant_temp():
     R_20 = 2480  # Resistance at 20°C (ohms)
     BETA = 3446  # Beta value
     V_read=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
-    # Calculate resistance of the thermistor
+
+    actual_temperatures = [14.67, 0.8, 60]
+
+    measured_temperatures = [29.72, 11.69, 104.53]
+
+# Calculate average discrepancy
+    average_discrepancy = sum([measured - actual for measured, actual in zip(measured_temperatures, actual_temperatures)]) / len(actual_temperatures)
+
+# Adjust beta value based on average discrepancy
+    BETA = BETA * (1 + average_discrepancy / 60)  # Adjust beta based on the average discrepancy
     R_t = (V_read * R_B) / (V_SUPPLY - V_read)
 
     # Calculate temperature using Steinhart-Hart equation
     temperature = 1 / ((1 / 298.15) + (1 / BETA) * math.log(R_t / R_20))
     temperature -= 273.15  # Convert from Kelvin to Celsius
+
+    
+
+    
     gaugeItems["COOLANT_TEMP"][2]=round(temperature,2)
 
 
