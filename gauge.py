@@ -131,7 +131,7 @@ def FUNCT_block_temp():
 def FUNCT_coolant_temp():
     voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     voltage=CONST_coolantTemp_balanceResistor*voltage
-    voltage=(CONST_coolantTemp_beta*CONST_coolantTempresistorRoomTemp) /(CONST_coolantTemp_beta+(CONST_coolantTempresistorRoomTemp * log(voltage /CONST_coolantTempresistorRoomTemp)))
+    voltage=(CONST_coolantTemp_beta*CONST_coolantTempresistorRoomTemp) /(CONST_coolantTemp_beta+(CONST_coolantTempresistorRoomTemp * math.log(voltage /CONST_coolantTempresistorRoomTemp)))
     voltage=voltage -273.15
 
     gaugeItems["COOLANT_TEMP"][2]=round(voltage,2)
