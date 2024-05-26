@@ -128,7 +128,7 @@ def FUNCT_block_temp():
     steinhart -= 273.15
     gaugeItems["BLOCK_TEMP"][2]=round(steinhart,2)
 
-def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.9, beta=3950, r_25=10000):
+def FUNCT_coolant_temp(voltage balance_resistor=1000, v_supply=4.9, beta=3950, r_25=10000):
     """
     Calculate the temperature of an NTC thermistor.
 
@@ -142,7 +142,7 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.9, beta=3950, r_25=1000
     Returns:
     - temperature: Temperature in degrees Celsius.
     """
-    voltage==adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
+    voltage=adc.read_voltage(int(gaugeItems["COOLANT_TEMP"][0]))
     # Calculate resistance of the thermistor
     resistance = balance_resistor * (v_supply / voltage - 1)
 
