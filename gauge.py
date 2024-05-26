@@ -50,7 +50,7 @@ gaugeItems={
 ######
 # Sensor Constants
 ######
-CONST_supply_voltage =4.4
+CONST_supply_voltage =4.7
 
 CONST_fuel_minVoltage =.5
 CONST_fuel_maxVoltage =4.5
