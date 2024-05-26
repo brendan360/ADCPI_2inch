@@ -78,7 +78,7 @@ CONST_blockTemproomTemp = 298.15  #in K)
 CONST_blockTempresistorRoomTemp = 2480.0  
 
 CONST_coolantTemp_balanceResistor = 1000.0
-CONST_coolantTemp_beta = 33200
+CONST_coolantTemp_beta = 3000
 CONST_coolantTemproomTemp = 20  #in c
 CONST_coolantTempresistorRoomTemp = 2480.0
 
