@@ -154,7 +154,7 @@ def FUNCT_coolant_temp(balance_resistor=1000, v_supply=4.7, beta=3446, r_25=2480
 # MAIN
 ######
 while True:
-#    FUNCT_block_temp()
+    FUNCT_block_temp()
 #    FUNCT_boost_pres()  
 #   FUNCT_fuel_pres()
     FUNCT_coolant_pres()
