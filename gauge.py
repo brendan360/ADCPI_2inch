@@ -55,7 +55,7 @@ CONST_fuel_maxVoltage =4.5
 CONST_fuel_minPressure =0
 CONST_fuel_maxPressure =1000
 
-CONST_coolant_minVoltage =.3
+CONST_coolant_minVoltage =.5
 CONST_coolant_maxVoltage =4.5
 CONST_coolant_minPressure =0
 CONST_coolant_maxPressure =1000
@@ -65,7 +65,7 @@ CONST_oil_maxVoltage =4.5
 CONST_oil_minPressure =0
 CONST_oil_maxPressure =1000
 
-CONST_boost_minVoltage =.3
+CONST_boost_minVoltage =.4
 CONST_boost_maxVoltage =4.65
 CONST_boost_minPressure =20
 CONST_boost_maxPressure =300
@@ -97,14 +97,13 @@ def FUNCT_fuel_pres():
 #    print(gaugeItems["FUEL_PRESSURE"][2])
 
 def FUNCT_coolant_pres():
-    voltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
-    gaugeItems["COOLANT_PRESSURE"][2]= (voltage - CONST_coolant_minVoltage)/(CONST_coolant_maxVoltage -CONST_coolant_minVoltage)*(CONST_coolant_maxPressure- CONST_coolant_minPressure) + CONST_coolant_minPressure
+    cvoltage=adc.read_voltage(int(gaugeItems["COOLANT_PRESSURE"][0]))
+    gaugeItems["COOLANT_PRESSURE"][2]= ((cvoltage - CONST_coolant_minVoltage)/(CONST_coolant_maxVoltage - CONST_coolant_minVoltage))*((CONST_coolant_maxPressure- CONST_coolant_minPressure) + CONST_coolant_minPressure)
     print(gaugeItems["COOLANT_PRESSURE"][2])
             
 def FUNCT_oil_pres():
     voltage=adc.read_voltage(int(gaugeItems["OIL_PRESSURE"][0]))
     gaugeItems["OIL_PRESSURE"][2]= (voltage - CONST_oil_minVoltage)/(CONST_oil_maxVoltage -CONST_oil_minVoltage)*(CONST_oil_maxPressure- CONST_oil_minPressure) + CONST_oil_minPressure
-#    print(gaugeItems["OIL_PRESSURE"][2])
 
 def FUNCT_boost_pres():
     voltage=adc.read_voltage(int(gaugeItems["BOOST"][0]))
@@ -116,12 +115,6 @@ def FUNCT_boost_pres():
     else:
         gaugeItems["BOOST"][9] = "psi"
        
-        
-
-#    print ((str(gaugeItems["BOOST"][2]))+" "+(str(gaugeItems["BOOST"][9])))
-
-
-
 
 def FUNCT_block_temp():
     voltage=adc.read_voltage(int(gaugeItems["BLOCK_TEMP"][0]))
