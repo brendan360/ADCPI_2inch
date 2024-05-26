@@ -130,8 +130,7 @@ def FUNCT_block_temp():
     
 def FUNCT_coolant_temp():
     voltage=adc.read_raw(int(gaugeItems["COOLANT_TEMP"][0]))
-
-    
+   
 
 
 
